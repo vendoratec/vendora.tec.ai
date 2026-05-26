@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendora – AI Kundenassistent</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0f1a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid #1f2440;
+}
+
+nav a {
+    color:#b0b0b0;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+nav a:hover {
+    color:white;
+}
+
+/* HERO */
+.hero {
+    text-align:center;
+    padding:90px 20px;
+    background: linear-gradient(135deg, #1a1f3c, #0b0f1a);
+}
+
+.hero h1 {
+    font-size:52px;
+    margin:0;
+}
+
+.hero p {
+    color:#b0b0b0;
+    font-size:18px;
+}
+
+/* SECTION */
+section {
+    padding:70px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+h2 {
+    text-align:center;
+    margin-bottom:40px;
+}
+
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+/* FLIP WRAPPER */
+.flip {
+    perspective: 1000px;
+}
+
+/* INNER BOX */
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* HOVER (DESKTOP) */
+.flip:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* CLICK (MOBILE + JS) */
+.flip.active .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT + BACK */
+.front, .back {
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:12px;
+    backface-visibility:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.front {
+    background:#151a2e;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.back {
+    background:#6c5ce7;
+    transform:rotateY(180deg);
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* PRICING */
+.price-box {
+    background:#151a2e;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.price {
+    font-size:26px;
+    color:#6c5ce7;
+    font-weight:bold;
+}
+
+/* FORM */
+input, textarea {
+    width:300px;
+    padding:12px;
+    margin:8px 0;
+    border-radius:6px;
+    border:none;
+}
+
+/* BUTTON */
+.btn {
+    padding:12px 25px;
+    background:#6c5ce7;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:30px;
+    color:#777;
+    border-top:1px solid #1f2440;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div><b>Vendora</b></div>
+    <div>
+        <a href="#features">Features</a>
+        <a href="#pricing">Preise</a>
+        <a href="#contact">Kontakt</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Vendora</h1>
+    <p>AI Kundenassistent für lokale Unternehmen – 24/7 erreichbar</p>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+    <h2>Was Vendora macht</h2>
+
+    <div class="grid">
+
+        <div class="flip" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+                <div class="front">24/7 AI Chat</div>
+                <div class="back">Beantwortet Kundenfragen automatisch – auch nachts & am Wochenende.</div>
+            </div>
+        </div>
+
+        <div class="flip" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+                <div class="front">Mehr Kunden</div>
+                <div class="back">Kein Besucher geht verloren – jeder wird automatisch erfasst.</div>
+            </div>
+        </div>
+
+        <div class="flip" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+                <div class="front">Termin System</div>
+                <div class="back">Perfekt für Friseure, Ärzte, Restaurants & Handwerker.</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+    <h2>Preise</h2>
+
+    <div class="grid">
+
+        <div class="flip" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+                <div class="front">BASIC<br>19€ / Monat</div>
+                <div class="back">Beantwortet einfache Kundenfragen automatisch.</div>
+            </div>
+        </div>
+
+        <div class="flip" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+                <div class="front">STANDARD<br>39€ / Monat</div>
+                <div class="back">AI beantwortet Fragen + sammelt Leads.</div>
+            </div>
+        </div>
+
+        <div class="flip" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+                <div class="front">PRO<br>79€ / Monat</div>
+                <div class="back">AI + Termine + Support + Business Features.</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="text-align:center;">
+    <h2>Kontakt / Demo anfragen</h2>
+
+    <p style="color:#b0b0b0;">
+        Wir erstellen dein individuelles Vendora Setup.
+    </p>
+
+    <input type="text" id="name" placeholder="Name" required><br>
+    <input type="email" id="email" placeholder="E-Mail" required><br>
+    <textarea id="message" placeholder="Was brauchst du?" rows="5"></textarea><br>
+
+    <button class="btn" onclick="sendMail()">Kostenlose Demo anfragen</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Vendora – AI Business Solutions
+</footer>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("ShMO5Hq_FueiAcTUj");
+})();
+
+function sendMail() {
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    };
+
+    emailjs.send("service_9hbr4bo", "template_8de664c", params)
+    .then(function() {
+        alert("✅ Anfrage gesendet!");
+    }, function(error) {
+        alert("❌ Fehler: " + JSON.stringify(error));
+    });
+}
+
+// Flip Cards Click Support
+document.querySelectorAll('.flip').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('active');
+    });
+});
+</script>
+
+</body>
+</html>
